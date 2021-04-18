@@ -2,6 +2,6 @@
 
 > This is a django application which is a blog page with CRUD functionality and authentication. 
 
-> Working on templates.
+> Done with template inheritance and css and bootstrap using static files.
 
 > Tutorial by Cory (Youtube).  
