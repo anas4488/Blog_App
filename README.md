@@ -2,6 +2,6 @@
 
 > This is a django application which is a blog page with CRUD functionality and authentication. 
 
-> Done with template inheritance and using css and bootstrap using static files. 
+> Done with registration page and also used CRISPY forms which helps with bootstrap a lot when it comes to prettifying forms. 
 
 > Tutorial by Cory (Youtube).  
