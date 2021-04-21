@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- Required meta tags -->
@@ -33,9 +34,15 @@
             </div>
             <!-- Navbar Right Side -->
                 <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#">Login</a>
-                <a class="nav-item nav-link" href="#">Register</a>
-                </div>
+                  
+                  {% if user.is_authenticated %}
+                    <span>Hello {{user.username}}!</span>
+                    <a class="p-2 nav-item nav-link ml-auto" href="{% url 'logout' %}">Logout</a>
+                  {% else %}                      
+                    <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                    <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                  {% endif %}  
+                  </div>
           </div>
         </div>
       </nav>
