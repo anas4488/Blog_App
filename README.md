@@ -6,4 +6,6 @@
 
 > Made login and logout template. Did routing for both. Used login decorator(login_required) for authentication.  
 
-> Tutorial by Cory (Youtube).  
+> CRUD functionality added with user specific options. 
+
+> Tutorial by Corey Schafer (Youtube).  
