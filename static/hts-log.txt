@@ -1,0 +1,53 @@
+HTTrack3.49-2+htsswf+htsjava launched on Sun, 09 May 2021 15:48:42 at http://ghost.estudiopatagon.com/rein/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" http://ghost.estudiopatagon.com/rein/ -O1 "E:\Omkar\Projects\Creative\Rein" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+15:49:51	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/tag/getting-started/ (from ghost.estudiopatagon.com/rein/)
+15:50:01	Error: 	"Not Found" (404) at link ghost.estudiopatagon.com/rein/subscribe/ (from ghost.estudiopatagon.com/rein/)
+15:50:12	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/tag/technology/ (from ghost.estudiopatagon.com/rein/)
+15:50:32	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/content/images/size/w700h500/2019/07/austin-distel-M1aegHe2j6g-unsplash.jpg (from ghost.estudiopatagon.com/rein/)
+15:50:42	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/admin-settings/ (from ghost.estudiopatagon.com/rein/)
+15:50:47	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/content/images/size/w160h160/2019/07/photo-1530021232320-687d8e3dba54.jpg (from ghost.estudiopatagon.com/rein/)
+15:50:48	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/content/images/size/w160h160/2019/07/austin-distel-M1aegHe2j6g-unsplash-1.jpg (from ghost.estudiopatagon.com/rein/)
+15:50:49	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/content/images/size/w160h160/2019/07/benjamin-suter-1589898-unsplash.jpg (from ghost.estudiopatagon.com/rein/)
+15:50:49	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/assets/fonts/remixicon.eot?t=1556503613854 (from ghost.estudiopatagon.com/rein/assets/dist/plugins.min.css?v=e1d678e3e0)
+15:50:49	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/assets/fonts/remixicon.woff?t=1556503613854 (from ghost.estudiopatagon.com/rein/assets/dist/plugins.min.css?v=e1d678e3e0)
+15:50:50	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/assets/fonts/fontawesome-webfont.eot?v=4.7.0 (from ghost.estudiopatagon.com/rein/assets/dist/plugins.min.css?v=e1d678e3e0)
+15:50:50	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/assets/fonts/fontawesome-webfont.woff2?v=4.7.0 (from ghost.estudiopatagon.com/rein/assets/dist/plugins.min.css?v=e1d678e3e0)
+15:51:24	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/content/images/2019/07/sandro-katalina-k1bO_VTiZSs-unsplash-3.jpg (from ghost.estudiopatagon.com/rein/classic/)
+15:51:47	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/assets/images/left-arrow.svg?v=e1d678e3e0 (from ghost.estudiopatagon.com/rein/classic/)
+15:51:48	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/rein/classic/ (from ghost.estudiopatagon.com/rein/classic/)
+15:51:50	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/content/images/2019/07/dan-gold-CCKcwh7s9A4-unsplash-1.jpg (from ghost.estudiopatagon.com/rein/fullwidth/)
+15:51:53	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/content/images/2019/07/christian-buehner-JQFHdpOKz2k-unsplash.jpg (from ghost.estudiopatagon.com/rein/fullwidth/)
+15:52:10	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/rein/fullwidth/ (from ghost.estudiopatagon.com/rein/fullwidth/)
+15:52:12	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/tag/getting-started/ (from ghost.estudiopatagon.com/rein/)
+15:52:13	Error: 	"Not Found" (404) at link ghost.estudiopatagon.com/rein/style-guide/amp/ (from ghost.estudiopatagon.com/rein/style-guide/)
+15:52:13	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/content/images/2019/07/mika-novo-1283478-unsplash-1.jpg (from ghost.estudiopatagon.com/rein/style-guide/)
+15:52:14	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/content/images/2019/07/tony-reid-PGdMhonLLZk-unsplash.jpg (from ghost.estudiopatagon.com/rein/style-guide/)
+15:52:20	Error: 	"Not Found" (404) at link ghost.estudiopatagon.com/rein/rein/apps-integrations/ (from ghost.estudiopatagon.com/rein/apps-integrations/)
+15:52:26	Error: 	"Not Found" (404) at link ghost.estudiopatagon.com/rein/rein/the-editor/ (from ghost.estudiopatagon.com/rein/the-editor/)
+15:52:26	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/content/images/2019/07/benjamin-suter-1589898-unsplash.jpg (from ghost.estudiopatagon.com/rein/tag/places/)
+15:52:38	Error: 	"Not Found" (404) at link ghost.estudiopatagon.com/rein/rein/organising-content/ (from ghost.estudiopatagon.com/rein/organising-content/)
+15:52:38	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/content/images/size/w160h160/2019/07/austin-distel-M1aegHe2j6g-unsplash-1.jpg (from ghost.estudiopatagon.com/rein/)
+15:52:40	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/assets/fonts/fontawesome-webfont.eot?v=4.7.0 (from ghost.estudiopatagon.com/rein/assets/dist/plugins.min.css?v=e1d678e3e0)
+15:52:41	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/content/images/size/w760h400/2019/07/dollar-gill-VW1xJfuOj2g-unsplash.jpg (from ghost.estudiopatagon.com/rein/themes/)
+15:52:46	Error: 	"Not Found" (404) at link ghost.estudiopatagon.com/rein/rein/themes/ (from ghost.estudiopatagon.com/rein/themes/)
+15:52:49	Error: 	"Not Found" (404) at link ghost.estudiopatagon.com/rein/rein/syntax-highlight-code-example/ (from ghost.estudiopatagon.com/rein/syntax-highlight-code-example/)
+15:52:49	Error: 	"Not Found" (404) at link ghost.estudiopatagon.com/rein/rein/classic/ (from ghost.estudiopatagon.com/rein/classic/)
+15:52:49	Warning: 	Found for ghost.estudiopatagon.com/rein/ghost/settings/code-injection/
+15:52:49	Warning: 	File has moved from ghost.estudiopatagon.com/rein/ghost/settings/code-injection/ to /rein/ghost/#/settings/code-injection/
+15:52:50	Error: 	"Not Found" (404) at link ghost.estudiopatagon.com/rein/rein/fullwidth/ (from ghost.estudiopatagon.com/rein/fullwidth/)
+15:53:15	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/content/images/2019/07/photo-1531756346973-7b893b8dbbdd.jpg (from ghost.estudiopatagon.com/rein/apps-integrations/amp/)
+15:53:22	Warning: 	Retry after error -4 (No data (connection closed)) at link ghost.estudiopatagon.com/rein/content/images/2019/07/photo-1494500764479-0c8f2919a3d8.jpg (from ghost.estudiopatagon.com/rein/the-editor/amp/)
+15:53:24	Error: 	"Not Found" (404) at link ghost.estudiopatagon.com/rein/publishing-options/ (from ghost.estudiopatagon.com/rein/the-editor/amp/)
+15:53:31	Error: 	"Not Found" (404) at link ghost.estudiopatagon.com/rein/rein/admin-settings/ (from ghost.estudiopatagon.com/rein/admin-settings/)
+15:53:31	Error: 	"No data (connection closed)" (-4) after 2 retries at link ghost.estudiopatagon.com/rein/assets/fonts/fontawesome-webfont.eot?v=4.7.0 (from ghost.estudiopatagon.com/rein/assets/dist/plugins.min.css?v=e1d678e3e0)
+15:53:38	Warning: 	Found for ghost.estudiopatagon.com/rein/ghost/settings/general/
+15:53:38	Warning: 	File has moved from ghost.estudiopatagon.com/rein/ghost/settings/general/ to /rein/ghost/#/settings/general/
+
+HTTrack Website Copier/3.49-2 mirror complete in 5 minutes 34 seconds : 157 links scanned, 116 files written (13172988 bytes overall) [8255187 bytes received at 24716 bytes/sec], 7063016 bytes transferred using HTTP compression in 59 files, ratio 27%, 2.5 requests per connection
+(12 errors, 30 warnings, 0 messages)
