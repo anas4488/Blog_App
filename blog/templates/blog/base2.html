@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +8,11 @@
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<title>Rein</title>
+{% comment %} <title>Rein</title> {% endcomment %}
+<!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+   
+   <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
 
 <meta name="HandheldFriendly" content="True" />
 <meta name="MobileOptimized" content="320" />
@@ -84,8 +89,84 @@
 	};
 </script>
 
+    {% if title %}
+        <title>Django Blog - {{ title }}</title>
+    {% else %}
+        <title>Django Blog</title>
+    {% endif %}
 </head>
-<body class=" home-template" >
+{% comment %} <body class=" home-template" >
+
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+           <div class="container">
+              <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Django Blog</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarToggle">
+                    <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
+                    <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+                    </div>
+                </div>
+           </div>
+            <!-- Navbar Right Side -->
+                <div class="container">
+                    <div class="navbar-nav">
+
+                    {% if user.is_authenticated %}
+                        <p>Hello {{user.username}}!</p>
+                        <a class="nav-item nav-link " href="{% url 'post-create' %}">New Post</a>
+                        <a class="nav-item nav-link " href="{% url 'profile' %}">Profile</a>
+                        <a class="nav-item nav-link " href="{% url 'logout' %}">Logout</a>
+                    {% else %}                      
+                        <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                        <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                    {% endif %}  
+                    </div>
+                </div>
+            </div>
+      </nav>
+    </header>
+
+
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8">
+            {% if messages %}
+              {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+            {% block content %}{% endblock %}
+            </div>
+            <div class="col-md-4">
+            <div class="content-section">
+                <h3>Our Sidebar</h3>
+                <p class='text-muted'>You can put any information here you'd like.
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-light">Latest Posts</li>
+                    <li class="list-group-item list-group-item-light">Announcements</li>
+                    <li class="list-group-item list-group-item-light">Calendars</li>
+                    <li class="list-group-item list-group-item-light">etc</li>
+                </ul>
+                </p>
+            </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    {% endcomment %}
+{% comment %} #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- {% endcomment %}
 
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none;">
 
@@ -111,15 +192,31 @@
     <!-- start: .mobile.main-nav -->
     <nav class="mobile main-nav hide-on-desktop" role="navigation">
         <ul id="menu-header" class="menu gradient-effect">
-		<li class="nav-home current-menu-item"><a href="index.html">Home</a></li>
-		<li class="nav-classic-post"><a href="classic/index.html">Classic Post</a></li>
-		<li class="nav-fullwidth-post"><a href="fullwidth/index.html">Fullwidth Post</a></li>
-		<li class="nav-tag"><a href="tag/getting-started/index.html">#Tag</a></li>
-		<li class="nav-author"><a href="author/jonathan-doe/index.html">Author</a></li>
-		<li class="nav-features"><a href="style-guide/index.html">Features</a></li>
-		<li class="nav-buy-this-theme"><a href="https://themeforest.net/item/rein-minimal-dark-theme-for-ghost/24182008">Buy this theme</a></li>
-</ul>        
+            <li class="nav-home current-menu-item"><a href="index.html">Home</a></li>
+            <li class="nav-classic-post"><a href="{% static 'ghost.estudiopatagon.com/classic/index.html' %}">Classic Post</a></li>
+            {% comment %} <li class="nav-fullwidth-post"><a href="fullwidth/index.html">Fullwidth Post</a></li> {% endcomment %}
+            <li class="nav-tag"><a href="tag/getting-started/index.html">#Tag</a></li>
+            <li class="nav-author"><a href="author/jonathan-doe/index.html">Author</a></li>
+            {% comment %} <li class="nav-features"><a href="style-guide/index.html">Features</a></li> {% endcomment %}
+            {% comment %} <li class="nav-buy-this-theme"><a href="https://themeforest.net/item/rein-minimal-dark-theme-for-ghost/24182008">Buy this theme</a></li> {% endcomment %}
+        </ul>        
     </nav>
+
+    <div class="container">
+                <div class="navbar-nav">
+
+                  {% if user.is_authenticated %}
+                    <p>Hello {{user.username}}!</p>
+                    <a class="nav-item nav-link " href="{% url 'post-create' %}">New Post</a>
+                    <a class="nav-item nav-link " href="{% url 'profile' %}">Profile</a>
+                    <a class="nav-item nav-link " href="{% url 'logout' %}">Logout</a>
+                  {% else %}                      
+                    <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                    <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                  {% endif %}  
+                </div>
+    </div>
+
     <!-- end: .mobile.main-nav -->
 
     <div class="menu-overlay hide-on-desktop"></div>
@@ -157,14 +254,14 @@
 			<nav class="main-nav grid-container grid-parent">
 				
 				<ul id="menu-header" class="menu gradient-effect">
-		<li class="nav-home current-menu-item"><a href="index.html">Home</a></li>
+		{% comment %} <li class="nav-home current-menu-item"><a href="index.html">Home</a></li>
 		<li class="nav-classic-post"><a href="classic/index.html">Classic Post</a></li>
 		<li class="nav-fullwidth-post"><a href="fullwidth/index.html">Fullwidth Post</a></li>
 		<li class="nav-tag"><a href="tag/getting-started/index.html">#Tag</a></li>
 		<li class="nav-author"><a href="author/jonathan-doe/index.html">Author</a></li>
 		<li class="nav-features"><a href="style-guide/index.html">Features</a></li>
-		<li class="nav-buy-this-theme"><a href="https://themeforest.net/item/rein-minimal-dark-theme-for-ghost/24182008">Buy this theme</a></li>
-</ul>
+		<li class="nav-buy-this-theme"><a href="https://themeforest.net/item/rein-minimal-dark-theme-for-ghost/24182008">Buy this theme</a></li> {% endcomment %}
+                </ul>
 				
 			</nav>
 			<!-- end: .main-nav -->
@@ -210,7 +307,7 @@
                 <!-- start: .articles -->
                 <div class="articles">
                             
-                        
+{% comment %}                         
 <article class="default grid-100 index-0 odd  post tag-getting-started">
     <div class="article-wrapper">
             <div class="post-format-wrapper left grid-50 tablet-grid-45 mobile-grid-100">
@@ -251,16 +348,16 @@
         <!-- end: .right -->
         <div class="clear"></div>
     </div>
-</article>
+</article> {% endcomment %}
 
 
-                        
+{% comment %}                         
 <article class="default grid-100 index-1 even  post tag-technology">
     <div class="article-wrapper">
             <div class="post-format-wrapper left grid-50 tablet-grid-45 mobile-grid-100">
                 <div class="featured-image">
                     <a href="apps-integrations/index.html" class="thumb hover-effect">
-                        <span class="fullimage cover lazy" data-src="content/images/size/w700h500/2019/07/photo-1531756346973-7b893b8dbbdd.jpg"></span>
+                        <span class="fullimage cover lazy" data-src="../../content/images/size/w700h500/2019/07/photo-1531756346973-7b893b8dbbdd.jpg"></span>
                         <!--<span class="fullimage cover lazy" data-src="http://ghost.estudiopatagon.com/rein/content/images/2019/07/photo-1531756346973-7b893b8dbbdd.jpg"></span>-->
                     </a>
 
@@ -472,8 +569,8 @@
         <div class="clear"></div>
     </div>
 </article>
-
-
+ {% endcomment %}
+{% comment %} 
 	<div class="clear"></div>
 	<div class="separator last hide-on-tablet hide-on-mobile"></div>
                     
@@ -486,9 +583,9 @@
 			<a class="next button purple" href="page/2/index.html">Next</a>
 	</div>
 </nav>
-            </div>
+            </div> {% endcomment %}
 
-            <!-- start: #sidebar -->
+            {% comment %} <!-- start: #sidebar -->
 <aside id="sidebar" role="complementary" class="grid-30 tablet-grid-30 hide-on-tablet hide-on-mobile">
 
 
@@ -555,20 +652,20 @@
                         </div>
                         <div class="clear"></div>
                     </article>	
-        </div>
+        </div> {% endcomment %}
         <!-- end: .widget-recent-articles -->
     <!-- start: .widget -->
-	<section class="widget">
+	{% comment %} <section class="widget">
 		<h4 class="widget-title title bordered">Advertising</h4> 
 		<div class="textwidget textcenter">
 			<a href="http://themeforest.net/user/estudiopatagon/portfolio?ref=EstudioPatagon" class="ads" target="_blank"><img src="assets/images/bannerfefa.png?v=e1d678e3e0"></a>
 		</div>
 		
 		<div class="clear"></div>
-	</section>
+	</section> {% endcomment %}
 	<!-- end: .widget -->
 
-    <!-- start: .tag-cloud -->
+    {% comment %} <!-- start: .tag-cloud -->
     <section class="widget widget-categories">
         <h3 class="title bordered">Categories</h3>
             <ul>
@@ -662,7 +759,7 @@
     </section>
     <!-- end: .popular-categories -->
 
-</main>
+</main> {% endcomment %}
 
 		<!-- start: #footer -->
 <footer id="footer" class="">
@@ -687,8 +784,8 @@
             <div class="widget widget-recent-articles grid-33 tablet-grid-50">
                 <h3 class="title bordered">Latest Articles</h3>
                         <article class="post item ">
-                                <a href="classic/index.html" class="thumb hover-effect grid-20 tablet-grid-20 mobile-grid-20 grid-parent">
-                                    <span class="fullimage cover lazy" data-src="content/images/size/w160h160/2019/07/photo-1530021232320-687d8e3dba54.jpg"></span>
+                                <a href="{% static 'classic/index.html' %}" class="thumb hover-effect grid-20 tablet-grid-20 mobile-grid-20 grid-parent">
+                                    <span class="fullimage cover lazy" data-src="{% static 'content/images/size/w160h160/2019/07/photo-1530021232320-687d8e3dba54.jpg' %}">hello</span>
                                 </a>
                             <div class="gradient-effect">
                                 <time datetime="2019-07-12">Jul 12, 2019</time>
@@ -722,7 +819,7 @@
             <!-- start: .widget-tag-cloud -->
             <div class="widget widget-tag-cloud grid-33 tablet-grid-50">
                 <h3 class="widget-title title bordered">Tag cloud</h3>
-                        <a href="tag/getting-started/index.html" class="ctag ctag-getting-started" data-id="ctag-getting-started">Getting Started</a>
+                        <a href="static/blog/ghost.estudiopatagon.com/tag/getting-started/index.html" class="ctag ctag-getting-started" data-id="ctag-getting-started">Getting Started</a>
                         <a href="tag/health/index.html" class="ctag ctag-health" data-id="ctag-health">Health</a>
                         <a href="tag/lifestyle/index.html" class="ctag ctag-lifestyle" data-id="ctag-lifestyle">Lifestyle</a>
                         <a href="tag/places/index.html" class="ctag ctag-places" data-id="ctag-places">Places</a>
@@ -738,7 +835,7 @@
                 <div class="widget-content">
                     <h3 class="title bordered">About me</h3>
                                 <div class="avatar">                            
-                                    <a href="author/jonathan-doe/index.html" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url( content/images/size/w160h160/2019/07/parker-coffman-1698322-unsplash-1.jpg);"></span></a>                            
+                                    <a href="author/jonathan-doe/index.html" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url( static/blog/ghost.estudiopatagon.com/content/images/size/w160h160/2019/07/parker-coffman-1698322-unsplash-1.jpg);"></span></a>                            
                                 </div>
                             <div class="info">
                                 <h4 class="title small author-name gradient-effect no-margin"><a href="author/jonathan-doe/index.html">Jonathan Doe</a></h4>
@@ -763,7 +860,7 @@
 
 	</div>
 
-        <div class="logo" ><a href="http://ghost.estudiopatagon.com/rein"><img src="content/images/2019/07/logo-v2%402x.png" alt="Rein"></a></div>
+        <div class="logo" ><a href="http://ghost.estudiopatagon.com/rein"><img src="../../ghost.estudiopatagon.com/content/images/2019/07/logo-v2%402x.png" alt="Rein"></a></div>
 
 	<p class="published gradient-effect">Published with <a href="https://ghost.org/" target="_blank">Ghost</a></p>
 
