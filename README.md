@@ -8,5 +8,4 @@
 
 > **CRUD** functionality added with user specific options. Also used **class based views** for making CRUD functionality.
 
-> Tutorial by Corey Schafer (Youtube).  
  
